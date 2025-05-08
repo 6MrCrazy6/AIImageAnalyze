@@ -21,7 +21,7 @@ class ObjectDetector:
         for box in results.boxes:
             cls_id = int(box.cls.item())
             label = names[cls_id]
-            coords = box.xyxy[0].tolist()  # [x1, y1, x2, y2]
+            coords = box.xyxy[0].tolist() 
             detections.append({"label": label, "coords": coords})
 
         return detections
@@ -37,8 +37,8 @@ class ObjectDetector:
 
 class Classifier:
     def __init__(self):
-        self.api_user = "622806118"
-        self.api_secret = "wmFnKWhBqe4gLrzgPRYiuAKtNc8VvHNk"
+        self.api_user = "API User"
+        self.api_secret = "API Secret"
         self.url = "https://api.sightengine.com/1.0/check.json"
 
     def classify_type(self, type_dict):
