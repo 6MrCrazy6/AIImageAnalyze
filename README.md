@@ -15,7 +15,17 @@ AIImageAnalyze is a desktop Python application with a Graphical User Interface (
 
 ## Screenshots
 
-![Application Interface](assets/screenshot.png)
+### Screenshot 1: Object Detection and Basic Analysis
+
+This screenshot demonstrates the application's main interface after an image has been loaded and basic object detection has been performed. On the left, the loaded image is displayed with bounding boxes around detected objects. On the right, a summary of detected objects and their counts is presented.
+
+![Object Detection and Basic Analysis](assets/screenshot1.png)
+
+### Screenshot 2: Advanced Analysis with Classification and Detailed Counts
+
+This screenshot shows the results of an advanced analysis. In addition to object detection, the application has performed image classification (e.g., "stove") and provided more detailed object counts. The image on the left still shows bounding boxes, while the right panel offers a comprehensive textual breakdown of the analysis, including classification and individual object counts.
+
+![Advanced Analysis with Classification and Detailed Counts](assets/screenshot2.png)
 
 ## Technologies
 
@@ -88,7 +98,8 @@ AIImageAnalyze/
 ├── README.md
 ├── LICENSE
 ├── assets/
-│   └── screenshot.png
+│   ├── screenshot1.png
+│   └── screenshot2.png
 ├── UI/
 │   ├── advanced_analysis_button.png
 │   ├── choose_img_button.png
@@ -119,6 +130,6 @@ This project is licensed under the MIT License. See the `LICENSE` file for more 
 Author: **Inna Varchenko**
 
 *   **GitHub**: [6MrCrazy6](https://github.com/6MrCrazy6)
-*   **Email**: [inna.varchenko@gmail.com](mailto:inna.varchenko@gmail.com)
+*   **Email**: [devilyumeko42@gmail.com](mailto:devilyumeko42@gmail.com)
 
 If you have any questions or suggestions, please feel free to reach out.
