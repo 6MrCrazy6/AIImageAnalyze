@@ -1,87 +1,92 @@
 # AIImageAnalyze
 
-## Обзор
+## Overview
 
-AIImageAnalyze — это десктопное приложение на Python с графическим интерфейсом (GUI), разработанное для комплексного анализа изображений. Оно объединяет передовые модели машинного обучения для выполнения таких задач, как обнаружение объектов, классификация изображений, семантическая сегментация и контекстный анализ. Приложение предоставляет интуитивно понятный интерфейс для загрузки изображений и получения подробных результатов анализа.
+AIImageAnalyze is a desktop Python application with a Graphical User Interface (GUI) designed for comprehensive image analysis. It integrates advanced machine learning models to perform tasks such as object detection, image classification, semantic segmentation, and contextual analysis. The application provides an intuitive interface for uploading images and obtaining detailed analysis results.
 
-## Возможности
+## Features
 
-*   **Обнаружение объектов**: Использование модели YOLOv10m для идентификации и локализации различных объектов на изображениях.
-*   **Классификация изображений**: Определение типа изображения с помощью API Sightengine.
-*   **Семантическая сегментация**: Выделение пикселей, принадлежащих определённым категориям объектов, с использованием модели DeepLabV3 (ResNet101).
-*   **Контекстный анализ (CLIP)**: Анализ общего контекста изображения с помощью модели OpenAI CLIP, сопоставляя его с заданным набором категорий.
-*   **Интуитивно понятный GUI**: Простой в использовании графический интерфейс на базе Tkinter для взаимодействия с приложением.
-*   **Сохранение результатов**: Возможность сохранять результаты анализа в текстовый файл.
+*   **Object Detection**: Utilizes the YOLOv10m model to identify and localize various objects within images.
+*   **Image Classification**: Determines the type of image using the Sightengine API.
+*   **Semantic Segmentation**: Highlights pixels belonging to specific object categories using the DeepLabV3 (ResNet101) model.
+*   **Contextual Analysis (CLIP)**: Analyzes the overall context of an image using the OpenAI CLIP model, matching it against a predefined set of categories.
+*   **Intuitive GUI**: An easy-to-use graphical interface built with Tkinter for interacting with the application.
+*   **Save Results**: Ability to save detailed analysis results to a text file.
 
-## Технологии
+## Technologies
 
-Проект использует следующие ключевые технологии и библиотеки:
+The project leverages the following key technologies and libraries:
 
-*   **Python**: Основной язык разработки.
-*   **Tkinter**: Для создания графического пользовательского интерфейса.
-*   **Pillow (PIL)**: Для обработки изображений.
-*   **PyTorch**: Фреймворк для машинного обучения, используемый для моделей сегментации и CLIP.
-*   **ultralytics (YOLOv10)**: Для обнаружения объектов.
-*   **CLIP (OpenAI)**: Для контекстного анализа изображений.
-*   **Sightengine API**: Для классификации изображений (требуется API ключ).
+*   **Python**: The primary development language.
+*   **Tkinter**: For creating the graphical user interface.
+*   **Pillow (PIL)**: For image processing.
+*   **PyTorch**: Machine learning framework used for segmentation and CLIP models.
+*   **ultralytics (YOLOv10)**: For object detection.
+*   **CLIP (OpenAI)**: For contextual image analysis.
+*   **Sightengine API**: For image classification (requires an API key).
 
-## Установка
+## Installation
 
-Для запуска AIImageAnalyze на вашей локальной машине выполните следующие шаги:
+To run AIImageAnalyze on your local machine, follow these steps:
 
-1.  **Клонируйте репозиторий**:
+1.  **Clone the repository**:
     ```bash
     git clone https://github.com/6MrCrazy6/AIImageAnalyze.git
     cd AIImageAnalyze
     ```
 
-2.  **Создайте виртуальное окружение (рекомендуется)**:
+2.  **Create a virtual environment (recommended)**:
     ```bash
     python -m venv venv
-    source venv/bin/activate  # Для Linux/macOS
-    # venv\Scripts\activate  # Для Windows
+    source venv/bin/activate  # For Linux/macOS
+    # venv\Scripts\activate  # For Windows
     ```
 
-3.  **Установите зависимости**:
+3.  **Install dependencies**:
     ```bash
     pip install -r requirements.txt
     ```
-    *Примечание*: Установка `clip` из GitHub может занять некоторое время.
+    *Note*: Installing `clip` from GitHub might take some time.
 
-4.  **Настройка API Sightengine**:
-    Для функции классификации изображений вам потребуется API ключ Sightengine. Зарегистрируйтесь на [Sightengine](https://sightengine.com/) и получите `API User` и `API Secret`.
-    Откройте файл `detector.py` и замените заглушки `"API User"` и `"API Secret"` на ваши реальные ключи:
+4.  **Sightengine API Configuration**:
+    For the image classification feature, you will need a Sightengine API key. Register at [Sightengine](https://sightengine.com/) to obtain your `API User` and `API Secret`.
+    Open the `detector.py` file and replace the placeholder `"API User"` and `"API Secret"` with your actual keys:
     ```python
     # detector.py
     class Classifier:
         def __init__(self):
-            self.api_user = "ВАШ_API_USER"
-            self.api_secret = "ВАШ_API_SECRET"
+            self.api_user = "YOUR_API_USER"
+            self.api_secret = "YOUR_API_SECRET"
             self.url = "https://api.sightengine.com/1.0/check.json"
     ```
 
-## Запуск приложения
+## Running the Application
 
-После установки всех зависимостей и настройки API вы можете запустить приложение:
+After installing all dependencies and configuring the API, you can launch the application:
 
 ```bash
 python gui_app.py
 ```
 
-При первом запуске приложение автоматически загрузит необходимые модели машинного обучения (YOLOv10m и DeepLabV3), что может занять некоторое время в зависимости от скорости вашего интернет-соединения.
+Upon first launch, the application will automatically download the necessary machine learning models (YOLOv10m and DeepLabV3), which may take some time depending on your internet connection speed.
 
-## Использование
+## Usage
 
-1.  **Выбор изображения**: Нажмите кнопку "Choose Image" (Выбрать изображение), чтобы загрузить изображение для анализа.
-2.  **Базовый анализ**: После выбора изображения приложение отобразит обнаруженные объекты.
-3.  **Расширенный анализ**: Нажмите кнопку "Advanced Analysis" (Расширенный анализ), чтобы выполнить классификацию, сегментацию и контекстный анализ. Результаты будут отображены в текстовом виде, а на изображении будут показаны рамки обнаруженных объектов.
-4.  **Сохранение результатов**: Используйте кнопку "Save to File" (Сохранить в файл), чтобы сохранить текстовые результаты расширенного анализа.
+1.  **Select Image**: Click the "Choose Image" button to load an image for analysis.
+2.  **Basic Analysis**: After selecting an image, the application will display detected objects.
+3.  **Advanced Analysis**: Click the "Advanced Analysis" button to perform classification, segmentation, and contextual analysis. Results will be shown in text format, and detected objects will be highlighted with bounding boxes on the image.
+4.  **Save Results**: Use the "Save to File" button to save the textual results of the advanced analysis.
 
-## Структура проекта
+## Screenshots
+
+*(Please add screenshots of the application in action here. For example, show the main interface, an image with detected objects, and the advanced analysis results.)*
+
+## Project Structure
 
 ```
 AIImageAnalyze/
 ├── README.md
+├── LICENSE
 ├── UI/
 │   ├── advanced_analysis_button.png
 │   ├── choose_img_button.png
@@ -94,17 +99,18 @@ AIImageAnalyze/
 └── requirements.txt
 ```
 
-*   `README.md`: Этот файл.
-*   `UI/`: Содержит графические ресурсы для кнопок и иконки приложения.
-*   `detector.py`: Содержит логику для обнаружения объектов, классификации, сегментации и контекстного анализа.
-*   `download_assets.py`: Скрипт для загрузки предварительно обученных моделей.
-*   `gui_app.py`: Основной файл приложения с графическим интерфейсом.
-*   `requirements.txt`: Список всех необходимых библиотек Python.
+*   `README.md`: This file.
+*   `LICENSE`: The MIT License file.
+*   `UI/`: Contains graphical assets for buttons and the application icon.
+*   `detector.py`: Contains the logic for object detection, classification, segmentation, and contextual analysis.
+*   `download_assets.py`: Script for downloading pre-trained models.
+*   `gui_app.py`: The main application file with the graphical interface.
+*   `requirements.txt`: List of all required Python libraries.
 
-## Лицензия
+## License
 
-Этот проект распространяется под лицензией MIT. Дополнительную информацию см. в файле `LICENSE` (если применимо).
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
 
-## Контакты
+## Contact
 
-Если у вас есть вопросы или предложения, пожалуйста, свяжитесь с автором через GitHub.
+If you have any questions or suggestions, please feel free to contact the author via GitHub.
