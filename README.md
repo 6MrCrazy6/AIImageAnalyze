@@ -13,6 +13,10 @@ AIImageAnalyze is a desktop Python application with a Graphical User Interface (
 *   **Intuitive GUI**: An easy-to-use graphical interface built with Tkinter for interacting with the application.
 *   **Save Results**: Ability to save detailed analysis results to a text file.
 
+## Screenshots
+
+![Application Interface](assets/screenshot.png)
+
 ## Technologies
 
 The project leverages the following key technologies and libraries:
@@ -77,16 +81,14 @@ Upon first launch, the application will automatically download the necessary mac
 3.  **Advanced Analysis**: Click the "Advanced Analysis" button to perform classification, segmentation, and contextual analysis. Results will be shown in text format, and detected objects will be highlighted with bounding boxes on the image.
 4.  **Save Results**: Use the "Save to File" button to save the textual results of the advanced analysis.
 
-## Screenshots
-
-*(Please add screenshots of the application in action here. For example, show the main interface, an image with detected objects, and the advanced analysis results.)*
-
 ## Project Structure
 
 ```
 AIImageAnalyze/
 ├── README.md
 ├── LICENSE
+├── assets/
+│   └── screenshot.png
 ├── UI/
 │   ├── advanced_analysis_button.png
 │   ├── choose_img_button.png
@@ -101,6 +103,7 @@ AIImageAnalyze/
 
 *   `README.md`: This file.
 *   `LICENSE`: The MIT License file.
+*   `assets/`: Contains screenshots and other media assets.
 *   `UI/`: Contains graphical assets for buttons and the application icon.
 *   `detector.py`: Contains the logic for object detection, classification, segmentation, and contextual analysis.
 *   `download_assets.py`: Script for downloading pre-trained models.
@@ -113,4 +116,9 @@ This project is licensed under the MIT License. See the `LICENSE` file for more 
 
 ## Contact
 
-If you have any questions or suggestions, please feel free to contact the author via GitHub.
+Author: **Inna Varchenko**
+
+*   **GitHub**: [6MrCrazy6](https://github.com/6MrCrazy6)
+*   **Email**: [inna.varchenko@gmail.com](mailto:inna.varchenko@gmail.com)
+
+If you have any questions or suggestions, please feel free to reach out.
