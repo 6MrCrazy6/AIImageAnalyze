@@ -1,8 +1,8 @@
-# AIImageAnalyze
+# AI Image Analyze
 
 ## Overview
 
-AIImageAnalyze is a desktop Python application with a Graphical User Interface (GUI) designed for comprehensive image analysis. It integrates advanced machine learning models to perform tasks such as object detection, image classification, semantic segmentation, and contextual analysis. The application provides an intuitive interface for uploading images and obtaining detailed analysis results.
+AI Image Analyze is a desktop Python application with a Graphical User Interface (GUI) designed for comprehensive image analysis. It integrates advanced machine learning models to perform tasks such as object detection, image classification, semantic segmentation, and contextual analysis. The application provides an intuitive interface for uploading images and obtaining detailed analysis results.
 
 ## Features
 
